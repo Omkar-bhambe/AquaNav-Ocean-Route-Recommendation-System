@@ -94,15 +94,5 @@ Architecture:
 
 ADD
 
-## 🤝 Acknowledgements
-- OpenWeatherMap
 
-- NetworkX
 
-- Folium
-
-## 👨‍💻 Authors
-Author 1 – bhambeomkar@gmail.com
-Author 2 - anuragsandbhor1111@gmail.com
-
-Department of Artificial Intelligence & Data Science, Bachelor of Engineering
