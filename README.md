@@ -93,7 +93,7 @@ Architecture:
 ## 📸 Screenshots
 
 1. Home Page:
-  <img src ="">
+  <img src ="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/First%20Page.jpg">
 
 2. Registeration Page:
   <img src="">
