@@ -15,8 +15,7 @@
 ---
 
 ## 📁 Project Structure
-AquaNav:
-AquaNav/
+
 AquaNav/                    
   - D_Lite_Backend_Model.py 
   - db.py                   
