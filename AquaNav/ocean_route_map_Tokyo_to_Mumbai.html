@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <h3 align="center" style="font-size:16px">
+    <b>Maritime Route: Tokyo to Mumbai</b><br>
+    Distance: 34112 km | 
+    Est. Time: 38 days, 10 hours
+    </h3>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 150px; height: 90px; 
+                border:2px solid grey; z-index:9999; font-size:12px;
+                background-color:white; padding: 10px">
+                &nbsp; <b>Risk Levels</b> <br>
+                &nbsp; <i class="fa fa-circle" style="color:green"></i> &nbsp; Low Risk <br>
+                &nbsp; <i class="fa fa-circle" style="color:orange"></i> &nbsp; Medium Risk <br>
+                &nbsp; <i class="fa fa-circle" style="color:red"></i> &nbsp; High Risk <br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc = L.map(
+                "map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc",
+                {
+                    center: [35.6895, 139.6917],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7ca4f38641953d35066a04516b7f4402 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7ca4f38641953d35066a04516b7f4402.addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var marker_bfa6bbdbf6dcf1c4721ef45bfe533980 = L.marker(
+                [37.7749, -122.4194],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_2dc4973ea3e7963ed0e99c699f42629b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_090b5030d22976308e05be4a1763ee89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58584576222b7d1cfa9f21a895d68f96 = $(`<div id="html_58584576222b7d1cfa9f21a895d68f96" style="width: 100.0%; height: 100.0%;">         <b>San Francisco Port</b><br>         <b>Weather:</b> clear sky<br>         <b>Wind Speed:</b> 2.67 m/s<br>         <b>Temperature:</b> 12.1°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_090b5030d22976308e05be4a1763ee89.setContent(html_58584576222b7d1cfa9f21a895d68f96);
+            
+        
+
+        marker_bfa6bbdbf6dcf1c4721ef45bfe533980.bindPopup(popup_090b5030d22976308e05be4a1763ee89)
+        ;
+
+        
+    
+    
+                marker_bfa6bbdbf6dcf1c4721ef45bfe533980.setIcon(icon_2dc4973ea3e7963ed0e99c699f42629b);
+            
+    
+            var marker_7191eb716e99d87b03fc3259edb8a6c0 = L.marker(
+                [35.6895, 139.6917],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_55255eea651e2e6f76254f668eb44acd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fbdc716fb1c8c0326a403e5316f62812 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a8faccc997bd70b33eeb662c80700d67 = $(`<div id="html_a8faccc997bd70b33eeb662c80700d67" style="width: 100.0%; height: 100.0%;">         <b>Tokyo Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 11.3 m/s<br>         <b>Temperature:</b> 20.2°C<br>         <b>Traffic:</b> High         </div>`)[0];
+                popup_fbdc716fb1c8c0326a403e5316f62812.setContent(html_a8faccc997bd70b33eeb662c80700d67);
+            
+        
+
+        marker_7191eb716e99d87b03fc3259edb8a6c0.bindPopup(popup_fbdc716fb1c8c0326a403e5316f62812)
+        ;
+
+        
+    
+    
+                marker_7191eb716e99d87b03fc3259edb8a6c0.setIcon(icon_55255eea651e2e6f76254f668eb44acd);
+            
+    
+            var marker_e9bccc77496f041e43446271bf6d396b = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_285d8144ba10a0b2dd1d2876f20db49d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c02705161e3c76033c51d3119e31e41e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_44e76aa3146d30f9d97d0db5db0de1c1 = $(`<div id="html_44e76aa3146d30f9d97d0db5db0de1c1" style="width: 100.0%; height: 100.0%;">         <b>New York Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 4.18 m/s<br>         <b>Temperature:</b> 14.3°C<br>         <b>Traffic:</b> High         </div>`)[0];
+                popup_c02705161e3c76033c51d3119e31e41e.setContent(html_44e76aa3146d30f9d97d0db5db0de1c1);
+            
+        
+
+        marker_e9bccc77496f041e43446271bf6d396b.bindPopup(popup_c02705161e3c76033c51d3119e31e41e)
+        ;
+
+        
+    
+    
+                marker_e9bccc77496f041e43446271bf6d396b.setIcon(icon_285d8144ba10a0b2dd1d2876f20db49d);
+            
+    
+            var marker_ae246a30de2bf343448726d8e532453e = L.marker(
+                [51.5074, -0.1278],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_2690e7f981a79cdbf707a75e4a4884fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04d7c7aa914a9f5e7c8e9c6b2167df6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cb36b7a01d18ac12dcede7694a1704f = $(`<div id="html_0cb36b7a01d18ac12dcede7694a1704f" style="width: 100.0%; height: 100.0%;">         <b>London Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 1.8 m/s<br>         <b>Temperature:</b> 5.4°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_04d7c7aa914a9f5e7c8e9c6b2167df6f.setContent(html_0cb36b7a01d18ac12dcede7694a1704f);
+            
+        
+
+        marker_ae246a30de2bf343448726d8e532453e.bindPopup(popup_04d7c7aa914a9f5e7c8e9c6b2167df6f)
+        ;
+
+        
+    
+    
+                marker_ae246a30de2bf343448726d8e532453e.setIcon(icon_2690e7f981a79cdbf707a75e4a4884fb);
+            
+    
+            var marker_b20544bf0487d6f71b7d7296429311b2 = L.marker(
+                [1.3521, 103.8198],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_6099903ed0dea9529f03f338420ada5f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8077000d50c735713feedacbb38b2ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7bd8ff8b325303fc0af53659bc63e559 = $(`<div id="html_7bd8ff8b325303fc0af53659bc63e559" style="width: 100.0%; height: 100.0%;">         <b>Singapore Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 0.68 m/s<br>         <b>Temperature:</b> 30.2°C<br>         <b>Traffic:</b> High         </div>`)[0];
+                popup_b8077000d50c735713feedacbb38b2ef.setContent(html_7bd8ff8b325303fc0af53659bc63e559);
+            
+        
+
+        marker_b20544bf0487d6f71b7d7296429311b2.bindPopup(popup_b8077000d50c735713feedacbb38b2ef)
+        ;
+
+        
+    
+    
+                marker_b20544bf0487d6f71b7d7296429311b2.setIcon(icon_6099903ed0dea9529f03f338420ada5f);
+            
+    
+            var marker_467b853285f1f5a5e5151383850d55ba = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_062fbc071cc4143d1e3dd207c4e47e6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e13f6f5584269e722695afe7aad9601 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dbfc6224422186859dc872ca1a7e9477 = $(`<div id="html_dbfc6224422186859dc872ca1a7e9477" style="width: 100.0%; height: 100.0%;">         <b>Mumbai Port</b><br>         <b>Weather:</b> clear sky<br>         <b>Wind Speed:</b> 2.62 m/s<br>         <b>Temperature:</b> 31.7°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_7e13f6f5584269e722695afe7aad9601.setContent(html_dbfc6224422186859dc872ca1a7e9477);
+            
+        
+
+        marker_467b853285f1f5a5e5151383850d55ba.bindPopup(popup_7e13f6f5584269e722695afe7aad9601)
+        ;
+
+        
+    
+    
+                marker_467b853285f1f5a5e5151383850d55ba.setIcon(icon_062fbc071cc4143d1e3dd207c4e47e6c);
+            
+    
+            var marker_d455c3554980516532f65a47a88d7a1d = L.marker(
+                [-33.9249, 18.4241],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_775a98a4cfad329cfc46b16ddb023a87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c85fa39d24839947aca04ed72cc9f33e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8aee9aebac44779f805ed8d79fe8453 = $(`<div id="html_d8aee9aebac44779f805ed8d79fe8453" style="width: 100.0%; height: 100.0%;">         <b>Cape Town Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 7.45 m/s<br>         <b>Temperature:</b> 16.1°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_c85fa39d24839947aca04ed72cc9f33e.setContent(html_d8aee9aebac44779f805ed8d79fe8453);
+            
+        
+
+        marker_d455c3554980516532f65a47a88d7a1d.bindPopup(popup_c85fa39d24839947aca04ed72cc9f33e)
+        ;
+
+        
+    
+    
+                marker_d455c3554980516532f65a47a88d7a1d.setIcon(icon_775a98a4cfad329cfc46b16ddb023a87);
+            
+    
+            var marker_3b22f274a155c604655177c79904c9d9 = L.marker(
+                [-33.8688, 151.2093],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_2b26ea91381d49bb1b479047344a2e83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_429ac922b535d42c1043024210c4276c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dfd9546c4ea4485229241f262c0a0eac = $(`<div id="html_dfd9546c4ea4485229241f262c0a0eac" style="width: 100.0%; height: 100.0%;">         <b>Sydney Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 7.44 m/s<br>         <b>Temperature:</b> 20.4°C<br>         <b>Traffic:</b> Low         </div>`)[0];
+                popup_429ac922b535d42c1043024210c4276c.setContent(html_dfd9546c4ea4485229241f262c0a0eac);
+            
+        
+
+        marker_3b22f274a155c604655177c79904c9d9.bindPopup(popup_429ac922b535d42c1043024210c4276c)
+        ;
+
+        
+    
+    
+                marker_3b22f274a155c604655177c79904c9d9.setIcon(icon_2b26ea91381d49bb1b479047344a2e83);
+            
+    
+            var marker_44b464c7a9765aac70de93ddb663a346 = L.marker(
+                [-22.9068, -43.1729],
+                {
+}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            var icon_fd89adff08b9993bd348f4c49a291ac7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1feaa7a97985abf95cd8cf0bddde8039 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11b05556d3cb2a7c13bb2682f5ed9738 = $(`<div id="html_11b05556d3cb2a7c13bb2682f5ed9738" style="width: 100.0%; height: 100.0%;">         <b>Rio de Janeiro Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 0.94 m/s<br>         <b>Temperature:</b> 24.3°C<br>         <b>Traffic:</b> Low         </div>`)[0];
+                popup_1feaa7a97985abf95cd8cf0bddde8039.setContent(html_11b05556d3cb2a7c13bb2682f5ed9738);
+            
+        
+
+        marker_44b464c7a9765aac70de93ddb663a346.bindPopup(popup_1feaa7a97985abf95cd8cf0bddde8039)
+        ;
+
+        
+    
+    
+                marker_44b464c7a9765aac70de93ddb663a346.setIcon(icon_fd89adff08b9993bd348f4c49a291ac7);
+            
+    
+            var circle_marker_0222889d2d7e5a0eb4ec58d63ee2b249 = L.circleMarker(
+                [35.0, -160.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+        var popup_5770c169afd02a7f6003fabd332531eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_847b7b5109f85b118bb9c4de580b6288 = $(`<div id="html_847b7b5109f85b118bb9c4de580b6288" style="width: 100.0%; height: 100.0%;">             <b>North Pacific 1</b><br>             <b>Weather:</b> overcast clouds<br>             <b>Wind Speed:</b> 7.11 m/s<br>             <b>Temperature:</b> 15.2°C<br>             <b>Traffic:</b> Low             </div>`)[0];
+                popup_5770c169afd02a7f6003fabd332531eb.setContent(html_847b7b5109f85b118bb9c4de580b6288);
+            
+        
+
+        circle_marker_0222889d2d7e5a0eb4ec58d63ee2b249.bindPopup(popup_5770c169afd02a7f6003fabd332531eb)
+        ;
+
+        
+    
+    
+            var circle_marker_602361e88dfa116faf8b92a37e254099 = L.circleMarker(
+                [-20.0, -120.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+        var popup_3d6ac4c6007a509ee79f906398907742 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45f51e04225781a5bb444c2eeadb5700 = $(`<div id="html_45f51e04225781a5bb444c2eeadb5700" style="width: 100.0%; height: 100.0%;">             <b>South Pacific 1</b><br>             <b>Weather:</b> few clouds<br>             <b>Wind Speed:</b> 5.45 m/s<br>             <b>Temperature:</b> 25.7°C<br>             <b>Traffic:</b> Low             </div>`)[0];
+                popup_3d6ac4c6007a509ee79f906398907742.setContent(html_45f51e04225781a5bb444c2eeadb5700);
+            
+        
+
+        circle_marker_602361e88dfa116faf8b92a37e254099.bindPopup(popup_3d6ac4c6007a509ee79f906398907742)
+        ;
+
+        
+    
+    
+            var circle_marker_f1230e58bc2d98a8f6efed8096d3aea4 = L.circleMarker(
+                [-50.0, 100.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+        var popup_c6829889fee5b46e14881b672aab4acf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2020921531ed646d74eb00c2db78631d = $(`<div id="html_2020921531ed646d74eb00c2db78631d" style="width: 100.0%; height: 100.0%;">             <b>Southern Ocean 1</b><br>             <b>Weather:</b> overcast clouds<br>             <b>Wind Speed:</b> 10.91 m/s<br>             <b>Temperature:</b> 3.5°C<br>             <b>Traffic:</b> Low             </div>`)[0];
+                popup_c6829889fee5b46e14881b672aab4acf.setContent(html_2020921531ed646d74eb00c2db78631d);
+            
+        
+
+        circle_marker_f1230e58bc2d98a8f6efed8096d3aea4.bindPopup(popup_c6829889fee5b46e14881b672aab4acf)
+        ;
+
+        
+    
+    
+            var circle_marker_1f5f4947018f15c8fe3003b67b59544a = L.circleMarker(
+                [-10.0, 80.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+        var popup_e466e7f8be2db57abe1b2e9f34473597 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c22edcd7e2ad5abadf1053d58a9d5c7 = $(`<div id="html_8c22edcd7e2ad5abadf1053d58a9d5c7" style="width: 100.0%; height: 100.0%;">             <b>Indian Ocean 1</b><br>             <b>Weather:</b> broken clouds<br>             <b>Wind Speed:</b> 5.37 m/s<br>             <b>Temperature:</b> 27.7°C<br>             <b>Traffic:</b> Low             </div>`)[0];
+                popup_e466e7f8be2db57abe1b2e9f34473597.setContent(html_8c22edcd7e2ad5abadf1053d58a9d5c7);
+            
+        
+
+        circle_marker_1f5f4947018f15c8fe3003b67b59544a.bindPopup(popup_e466e7f8be2db57abe1b2e9f34473597)
+        ;
+
+        
+    
+    
+            var poly_line_feb7bbf7f46dd91848e1d9669f23cdf6 = L.polyline(
+                [[35.6895, 139.6917], [35.0, -160.0]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            poly_line_feb7bbf7f46dd91848e1d9669f23cdf6.bindTooltip(
+                `<div>
+                     Tokyo → North Pacific 1: 5392 km, Risk: 2.3x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7cae218d5cf4a86b073251c0b54393c0 = L.polyline(
+                [[35.0, -160.0], [-20.0, -120.0]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            poly_line_7cae218d5cf4a86b073251c0b54393c0.bindTooltip(
+                `<div>
+                     North Pacific 1 → South Pacific 1: 7411 km, Risk: 1.0x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5f2ae0e1c150db4baaeb6ac324e26219 = L.polyline(
+                [[-20.0, -120.0], [-33.8688, 151.2093]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            poly_line_5f2ae0e1c150db4baaeb6ac324e26219.bindTooltip(
+                `<div>
+                     South Pacific 1 → Sydney: 8693 km, Risk: 1.0x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dd83078a55da2787962ba2a5e2f25072 = L.polyline(
+                [[-33.8688, 151.2093], [-50.0, 100.0]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            poly_line_dd83078a55da2787962ba2a5e2f25072.bindTooltip(
+                `<div>
+                     Sydney → Southern Ocean 1: 4504 km, Risk: 1.5x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dc88ed0d8ba0b93bec17899ba3766770 = L.polyline(
+                [[-50.0, 100.0], [-10.0, 80.0]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            poly_line_dc88ed0d8ba0b93bec17899ba3766770.bindTooltip(
+                `<div>
+                     Southern Ocean 1 → Indian Ocean 1: 4803 km, Risk: 1.5x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_cebd6e2b0a54136b19fd83f51f7f9475 = L.polyline(
+                [[-10.0, 80.0], [19.076, 72.8777]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0a9f9ae5f6ecb3ab1d168f192c3ae6dc);
+        
+    
+            poly_line_cebd6e2b0a54136b19fd83f51f7f9475.bindTooltip(
+                `<div>
+                     Indian Ocean 1 → Mumbai: 3310 km, Risk: 1.4x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

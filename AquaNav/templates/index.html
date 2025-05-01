@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intelligent Ocean Route Recommendation</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0077be, #00a8cc);
+      padding-top: 60px;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      background: #ffffffee;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077be;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #0077be;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #005f95;
+    }
+
+    .result-section {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f7faff;
+      border-left: 5px solid #0077be;
+      border-radius: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      iframe {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2> AquaNav: Ocean Route Recommendation</h2>
+    <form method="POST">
+      <label for="start">Start Port:</label>
+      <select name="start" id="start" required>
+        {% for port in ports %}
+          <option value="{{ port }}">{{ port }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="end">Destination Port:</label>
+      <select name="end" id="end" required>
+        {% for port in ports %}
+          <option value="{{ port }}">{{ port }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit">Compute Route</button>
+    </form>
+
+    {% if route_info %}
+    <div class="result-section">
+      <h4>Optimal Route:</h4>
+      <p><strong>Path:</strong> {{ route_info.path }}</p>
+      <p><strong>Distance:</strong> {{ route_info.distance }} nautical miles</p>
+      <p><strong>Estimated Duration:</strong> {{ route_info.duration }}</p>
+    </div>
+
+    <div>{{ map_html|safe }}</div>
+    {% endif %}
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

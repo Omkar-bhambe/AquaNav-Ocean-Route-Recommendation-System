@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bfdf64b6b3945b721aa43809c2116eb1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <h3 align="center" style="font-size:16px">
+    <b>Maritime Route: San Francisco to Suez Canal South</b><br>
+    Distance: 21669 km | 
+    Est. Time: 24 days, 10 hours
+    </h3>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 150px; height: 90px; 
+                border:2px solid grey; z-index:9999; font-size:12px;
+                background-color:white; padding: 10px">
+                &nbsp; <b>Risk Levels</b> <br>
+                &nbsp; <i class="fa fa-circle" style="color:green"></i> &nbsp; Low Risk <br>
+                &nbsp; <i class="fa fa-circle" style="color:orange"></i> &nbsp; Medium Risk <br>
+                &nbsp; <i class="fa fa-circle" style="color:red"></i> &nbsp; High Risk <br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_bfdf64b6b3945b721aa43809c2116eb1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bfdf64b6b3945b721aa43809c2116eb1 = L.map(
+                "map_bfdf64b6b3945b721aa43809c2116eb1",
+                {
+                    center: [37.7749, -122.4194],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2b452c232c4477211c72ca7e033bb018 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2b452c232c4477211c72ca7e033bb018.addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var marker_f5f1f8e5e2f0428b51a8f5173b26605c = L.marker(
+                [37.7749, -122.4194],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_968aaddae68f6769f8a728a0d98728a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9fc22a44b83de1630f7228b76cc4fcee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f95640e7b72e6267b6e8d10aae5e3bae = $(`<div id="html_f95640e7b72e6267b6e8d10aae5e3bae" style="width: 100.0%; height: 100.0%;">         <b>San Francisco Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 5.84 m/s<br>         <b>Temperature:</b> 13.7°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_9fc22a44b83de1630f7228b76cc4fcee.setContent(html_f95640e7b72e6267b6e8d10aae5e3bae);
+            
+        
+
+        marker_f5f1f8e5e2f0428b51a8f5173b26605c.bindPopup(popup_9fc22a44b83de1630f7228b76cc4fcee)
+        ;
+
+        
+    
+    
+                marker_f5f1f8e5e2f0428b51a8f5173b26605c.setIcon(icon_968aaddae68f6769f8a728a0d98728a8);
+            
+    
+            var marker_dadfcd8740235870ca57450ad09710ce = L.marker(
+                [35.6895, 139.6917],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_c958715ce606c071dff595c81cbc9304 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb335eb9e1bb7ceef6954776e08d6470 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7f348ca522a557bba71b9fbc5460dddb = $(`<div id="html_7f348ca522a557bba71b9fbc5460dddb" style="width: 100.0%; height: 100.0%;">         <b>Tokyo Port</b><br>         <b>Weather:</b> clear sky<br>         <b>Wind Speed:</b> 2.36 m/s<br>         <b>Temperature:</b> 11.7°C<br>         <b>Traffic:</b> High         </div>`)[0];
+                popup_cb335eb9e1bb7ceef6954776e08d6470.setContent(html_7f348ca522a557bba71b9fbc5460dddb);
+            
+        
+
+        marker_dadfcd8740235870ca57450ad09710ce.bindPopup(popup_cb335eb9e1bb7ceef6954776e08d6470)
+        ;
+
+        
+    
+    
+                marker_dadfcd8740235870ca57450ad09710ce.setIcon(icon_c958715ce606c071dff595c81cbc9304);
+            
+    
+            var marker_f33e175c678e4079f0370682084e18f3 = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_5e54aee8e804b235d2469d4545e850cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_271f69383e7c5563ec8e5f7e190fa88b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab9d2c944a6251b7464d0956376bf53c = $(`<div id="html_ab9d2c944a6251b7464d0956376bf53c" style="width: 100.0%; height: 100.0%;">         <b>New York Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 10.5 m/s<br>         <b>Temperature:</b> 18.5°C<br>         <b>Traffic:</b> High         </div>`)[0];
+                popup_271f69383e7c5563ec8e5f7e190fa88b.setContent(html_ab9d2c944a6251b7464d0956376bf53c);
+            
+        
+
+        marker_f33e175c678e4079f0370682084e18f3.bindPopup(popup_271f69383e7c5563ec8e5f7e190fa88b)
+        ;
+
+        
+    
+    
+                marker_f33e175c678e4079f0370682084e18f3.setIcon(icon_5e54aee8e804b235d2469d4545e850cd);
+            
+    
+            var marker_80696abde4f544b0240183b5e6da59ce = L.marker(
+                [51.5074, -0.1278],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_006d76e525298d59ad7eafac9018d03b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f31f040e670156ac1dfa7658bf7963ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_43b4a65a2f1dfbd652d2fef2b2317a34 = $(`<div id="html_43b4a65a2f1dfbd652d2fef2b2317a34" style="width: 100.0%; height: 100.0%;">         <b>London Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 4.55 m/s<br>         <b>Temperature:</b> 11.9°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_f31f040e670156ac1dfa7658bf7963ae.setContent(html_43b4a65a2f1dfbd652d2fef2b2317a34);
+            
+        
+
+        marker_80696abde4f544b0240183b5e6da59ce.bindPopup(popup_f31f040e670156ac1dfa7658bf7963ae)
+        ;
+
+        
+    
+    
+                marker_80696abde4f544b0240183b5e6da59ce.setIcon(icon_006d76e525298d59ad7eafac9018d03b);
+            
+    
+            var marker_b8ddb479dfd669755afd297ba45f7908 = L.marker(
+                [1.3521, 103.8198],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_40b529812984c0a1d3cec9cd974d2554 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e8063af1a4f391472c835aa0b6f43525 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b7fdd1f64f6fe9bea6cf8031d4e214b = $(`<div id="html_3b7fdd1f64f6fe9bea6cf8031d4e214b" style="width: 100.0%; height: 100.0%;">         <b>Singapore Port</b><br>         <b>Weather:</b> broken clouds<br>         <b>Wind Speed:</b> 2.46 m/s<br>         <b>Temperature:</b> 26.4°C<br>         <b>Traffic:</b> High         </div>`)[0];
+                popup_e8063af1a4f391472c835aa0b6f43525.setContent(html_3b7fdd1f64f6fe9bea6cf8031d4e214b);
+            
+        
+
+        marker_b8ddb479dfd669755afd297ba45f7908.bindPopup(popup_e8063af1a4f391472c835aa0b6f43525)
+        ;
+
+        
+    
+    
+                marker_b8ddb479dfd669755afd297ba45f7908.setIcon(icon_40b529812984c0a1d3cec9cd974d2554);
+            
+    
+            var marker_c0351a4b0e8bcad74bb504dd572bb69e = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_29458d4442dc509e367f826611251e6e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60a4180108705d5a7762271567b5a792 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ab78f5bcdc1143a86b588bf6edca268 = $(`<div id="html_0ab78f5bcdc1143a86b588bf6edca268" style="width: 100.0%; height: 100.0%;">         <b>Mumbai Port</b><br>         <b>Weather:</b> clear sky<br>         <b>Wind Speed:</b> 4 m/s<br>         <b>Temperature:</b> 28.7°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_60a4180108705d5a7762271567b5a792.setContent(html_0ab78f5bcdc1143a86b588bf6edca268);
+            
+        
+
+        marker_c0351a4b0e8bcad74bb504dd572bb69e.bindPopup(popup_60a4180108705d5a7762271567b5a792)
+        ;
+
+        
+    
+    
+                marker_c0351a4b0e8bcad74bb504dd572bb69e.setIcon(icon_29458d4442dc509e367f826611251e6e);
+            
+    
+            var marker_4d11c0013cf0140e8dbeb6f984b314a7 = L.marker(
+                [-33.9249, 18.4241],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_99c8f032dc41e34e44a0c05873304c26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78d775b52a8fee6f61c1a8caba619a70 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fdf75e7c6d63dfc407273a8c675e9d3b = $(`<div id="html_fdf75e7c6d63dfc407273a8c675e9d3b" style="width: 100.0%; height: 100.0%;">         <b>Cape Town Port</b><br>         <b>Weather:</b> broken clouds<br>         <b>Wind Speed:</b> 6.41 m/s<br>         <b>Temperature:</b> 17.0°C<br>         <b>Traffic:</b> Medium         </div>`)[0];
+                popup_78d775b52a8fee6f61c1a8caba619a70.setContent(html_fdf75e7c6d63dfc407273a8c675e9d3b);
+            
+        
+
+        marker_4d11c0013cf0140e8dbeb6f984b314a7.bindPopup(popup_78d775b52a8fee6f61c1a8caba619a70)
+        ;
+
+        
+    
+    
+                marker_4d11c0013cf0140e8dbeb6f984b314a7.setIcon(icon_99c8f032dc41e34e44a0c05873304c26);
+            
+    
+            var marker_db51991dec6ed07d7d90ce1798b77c8c = L.marker(
+                [-33.8688, 151.2093],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_160f951b75eba086a6c6ddeefd432c72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a550ace2eaf1c21948de00bf6e64c62 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a6471c2dec0fbb883b6d0038fe7ee117 = $(`<div id="html_a6471c2dec0fbb883b6d0038fe7ee117" style="width: 100.0%; height: 100.0%;">         <b>Sydney Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 6.13 m/s<br>         <b>Temperature:</b> 16.1°C<br>         <b>Traffic:</b> Low         </div>`)[0];
+                popup_3a550ace2eaf1c21948de00bf6e64c62.setContent(html_a6471c2dec0fbb883b6d0038fe7ee117);
+            
+        
+
+        marker_db51991dec6ed07d7d90ce1798b77c8c.bindPopup(popup_3a550ace2eaf1c21948de00bf6e64c62)
+        ;
+
+        
+    
+    
+                marker_db51991dec6ed07d7d90ce1798b77c8c.setIcon(icon_160f951b75eba086a6c6ddeefd432c72);
+            
+    
+            var marker_6e824141ca7e6080dd463ab61108f0f4 = L.marker(
+                [-22.9068, -43.1729],
+                {
+}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            var icon_49af2392959f6a8b2b9837c1485c2945 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "ship",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d45b6e900d5749eb2675d771723b291 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_060b7645a717084e5c4bca81b9da1605 = $(`<div id="html_060b7645a717084e5c4bca81b9da1605" style="width: 100.0%; height: 100.0%;">         <b>Rio de Janeiro Port</b><br>         <b>Weather:</b> overcast clouds<br>         <b>Wind Speed:</b> 2.48 m/s<br>         <b>Temperature:</b> 25.8°C<br>         <b>Traffic:</b> Low         </div>`)[0];
+                popup_0d45b6e900d5749eb2675d771723b291.setContent(html_060b7645a717084e5c4bca81b9da1605);
+            
+        
+
+        marker_6e824141ca7e6080dd463ab61108f0f4.bindPopup(popup_0d45b6e900d5749eb2675d771723b291)
+        ;
+
+        
+    
+    
+                marker_6e824141ca7e6080dd463ab61108f0f4.setIcon(icon_49af2392959f6a8b2b9837c1485c2945);
+            
+    
+            var circle_marker_c4c6610471d468e8e59f71e293ef8159 = L.circleMarker(
+                [8.8909, -79.525],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+        var popup_59929740f735c2979190141e59a78b19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c0b445fe10a880cce88cea764e22aace = $(`<div id="html_c0b445fe10a880cce88cea764e22aace" style="width: 100.0%; height: 100.0%;">             <b>Panama Canal West</b><br>             <b>Weather:</b> light rain<br>             <b>Wind Speed:</b> 3.19 m/s<br>             <b>Temperature:</b> 29.4°C<br>             <b>Traffic:</b> High             </div>`)[0];
+                popup_59929740f735c2979190141e59a78b19.setContent(html_c0b445fe10a880cce88cea764e22aace);
+            
+        
+
+        circle_marker_c4c6610471d468e8e59f71e293ef8159.bindPopup(popup_59929740f735c2979190141e59a78b19)
+        ;
+
+        
+    
+    
+            var circle_marker_89198caf850cdf22fbce47d52c2532b3 = L.circleMarker(
+                [9.308, -79.915],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+        var popup_ddbd83b5704ad9e707b323c5bf25c6ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_297913d5ec7eeea101e91da31fc2928d = $(`<div id="html_297913d5ec7eeea101e91da31fc2928d" style="width: 100.0%; height: 100.0%;">             <b>Panama Canal East</b><br>             <b>Weather:</b> overcast clouds<br>             <b>Wind Speed:</b> 4.78 m/s<br>             <b>Temperature:</b> 26.4°C<br>             <b>Traffic:</b> High             </div>`)[0];
+                popup_ddbd83b5704ad9e707b323c5bf25c6ad.setContent(html_297913d5ec7eeea101e91da31fc2928d);
+            
+        
+
+        circle_marker_89198caf850cdf22fbce47d52c2532b3.bindPopup(popup_ddbd83b5704ad9e707b323c5bf25c6ad)
+        ;
+
+        
+    
+    
+            var circle_marker_6d80792591fb5276f85a2f31fdcbc802 = L.circleMarker(
+                [40.0, -40.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+        var popup_7b9725fc7213ace9b486e3a045ff0061 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eacc426374dd3dbed7821a1e70abc739 = $(`<div id="html_eacc426374dd3dbed7821a1e70abc739" style="width: 100.0%; height: 100.0%;">             <b>North Atlantic 1</b><br>             <b>Weather:</b> overcast clouds<br>             <b>Wind Speed:</b> 11.3 m/s<br>             <b>Temperature:</b> 17.4°C<br>             <b>Traffic:</b> Low             </div>`)[0];
+                popup_7b9725fc7213ace9b486e3a045ff0061.setContent(html_eacc426374dd3dbed7821a1e70abc739);
+            
+        
+
+        circle_marker_6d80792591fb5276f85a2f31fdcbc802.bindPopup(popup_7b9725fc7213ace9b486e3a045ff0061)
+        ;
+
+        
+    
+    
+            var circle_marker_abca80bf5c222a14cbffe4d01e71b3a8 = L.circleMarker(
+                [35.9897, -5.6075],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+        var popup_e3341fa8a1696476c8832d4ac4c12769 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2e6140dca5ecadb271ec822f0dbea54 = $(`<div id="html_f2e6140dca5ecadb271ec822f0dbea54" style="width: 100.0%; height: 100.0%;">             <b>Strait of Gibraltar</b><br>             <b>Weather:</b> clear sky<br>             <b>Wind Speed:</b> 9.96 m/s<br>             <b>Temperature:</b> 13.6°C<br>             <b>Traffic:</b> High             </div>`)[0];
+                popup_e3341fa8a1696476c8832d4ac4c12769.setContent(html_f2e6140dca5ecadb271ec822f0dbea54);
+            
+        
+
+        circle_marker_abca80bf5c222a14cbffe4d01e71b3a8.bindPopup(popup_e3341fa8a1696476c8832d4ac4c12769)
+        ;
+
+        
+    
+    
+            var circle_marker_b1b35783aa4709f4b0d1820a6d972a89 = L.circleMarker(
+                [31.2156, 32.3471],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+        var popup_b0fbc76ae5cb3d662a7648b4cc55bc1f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7bad328fdc5fe49f6c2718e2745f1d6 = $(`<div id="html_f7bad328fdc5fe49f6c2718e2745f1d6" style="width: 100.0%; height: 100.0%;">             <b>Suez Canal North</b><br>             <b>Weather:</b> overcast clouds<br>             <b>Wind Speed:</b> 6.36 m/s<br>             <b>Temperature:</b> 17.4°C<br>             <b>Traffic:</b> High             </div>`)[0];
+                popup_b0fbc76ae5cb3d662a7648b4cc55bc1f.setContent(html_f7bad328fdc5fe49f6c2718e2745f1d6);
+            
+        
+
+        circle_marker_b1b35783aa4709f4b0d1820a6d972a89.bindPopup(popup_b0fbc76ae5cb3d662a7648b4cc55bc1f)
+        ;
+
+        
+    
+    
+            var circle_marker_aebf5df65913aefc189560235f3a85f1 = L.circleMarker(
+                [29.9368, 32.5519],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+        var popup_e12cb936a15a29d4ab04564f2499d94c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_29a4a98783b45426bc5d29b3bc7bae7e = $(`<div id="html_29a4a98783b45426bc5d29b3bc7bae7e" style="width: 100.0%; height: 100.0%;">             <b>Suez Canal South</b><br>             <b>Weather:</b> few clouds<br>             <b>Wind Speed:</b> 5.18 m/s<br>             <b>Temperature:</b> 16.6°C<br>             <b>Traffic:</b> High             </div>`)[0];
+                popup_e12cb936a15a29d4ab04564f2499d94c.setContent(html_29a4a98783b45426bc5d29b3bc7bae7e);
+            
+        
+
+        circle_marker_aebf5df65913aefc189560235f3a85f1.bindPopup(popup_e12cb936a15a29d4ab04564f2499d94c)
+        ;
+
+        
+    
+    
+            var poly_line_7e00b1dec881ce2f1d826fe8fc6e1451 = L.polyline(
+                [[37.7749, -122.4194], [8.8909, -79.525]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_7e00b1dec881ce2f1d826fe8fc6e1451.bindTooltip(
+                `<div>
+                     San Francisco → Panama Canal West: 6427 km, Risk: 2.3x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_04446daf268f7f1ad57cb0f125cda9d5 = L.polyline(
+                [[8.8909, -79.525], [9.308, -79.915]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_04446daf268f7f1ad57cb0f125cda9d5.bindTooltip(
+                `<div>
+                     Panama Canal West → Panama Canal East: 76 km, Risk: 2.3x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_13bee222507a0bcbd645959e673276c6 = L.polyline(
+                [[9.308, -79.915], [40.7128, -74.006]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_13bee222507a0bcbd645959e673276c6.bindTooltip(
+                `<div>
+                     Panama Canal East → New York: 4234 km, Risk: 2.3x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6802f6dfec20f866e0a9254499b20094 = L.polyline(
+                [[40.7128, -74.006], [40.0, -40.0]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_6802f6dfec20f866e0a9254499b20094.bindTooltip(
+                `<div>
+                     New York → North Atlantic 1: 2872 km, Risk: 2.8x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_10d6bbd06001f6537fa21562320b9e96 = L.polyline(
+                [[40.0, -40.0], [35.9897, -5.6075]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_10d6bbd06001f6537fa21562320b9e96.bindTooltip(
+                `<div>
+                     North Atlantic 1 → Strait of Gibraltar: 3641 km, Risk: 2.3x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_05428edd748bd1dbe94cf756c169e930 = L.polyline(
+                [[35.9897, -5.6075], [31.2156, 32.3471]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_05428edd748bd1dbe94cf756c169e930.bindTooltip(
+                `<div>
+                     Strait of Gibraltar → Suez Canal North: 4248 km, Risk: 1.8x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6c98413a430750f542d7a27b69a55233 = L.polyline(
+                [[31.2156, 32.3471], [29.9368, 32.5519]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bfdf64b6b3945b721aa43809c2116eb1);
+        
+    
+            poly_line_6c98413a430750f542d7a27b69a55233.bindTooltip(
+                `<div>
+                     Suez Canal North → Suez Canal South: 172 km, Risk: 1.8x
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

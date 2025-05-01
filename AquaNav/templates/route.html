@@ -1,0 +1,26 @@
+<!-- templates/route.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Route Map - AquaNav</title>
+</head>
+<body>
+    <h1>Ship Route from {{ route_info.start }} to {{ route_info.destination }}</h1>
+
+    <h3>Route Summary:</h3>
+    <ul>
+        <li><strong>Path:</strong> {{ route_info.path }}</li>
+        <li><strong>Total Distance:</strong> {{ route_info.distance }} nautical miles</li>
+        <li><strong>Estimated Duration:</strong> {{ route_info.duration }}</li>
+    </ul>
+
+    <h3>Map Visualization:</h3>
+    <div>
+        {{ map_html|safe }}
+    </div>
+
+    <br>
+    <a href="{{ url_for('ship_route') }}">🔁 Plan Another Route</a>
+</body>
+</html>
