@@ -56,10 +56,10 @@ Architecture:
    cd AquaNav
    
 2. **Create a virtual environment (optional but recommended:**
-  ```bash 
-  python -m venv venv
-  source venv/bin/activate  # For Linux/macOS
-  venv\Scripts\activate     # For Windows
+    ```bash
+        python -m venv venv
+    source venv/bin/activate  # For Linux/macOS
+    venv\Scripts\activate     # For Windows
 
 3
 
