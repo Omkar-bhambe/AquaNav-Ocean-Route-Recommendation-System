@@ -65,3 +65,44 @@ Architecture:
     ```bash
        pip install -r requirements.txt
 
+4. Set up your OpenWeatherMap API Key:
+    - Create a .env file and add:
+      ```bash 
+          OPENWEATHER_API_KEY=your_api_key_here
+
+5. Run the application:
+   ```bash:
+       python AquaNav/main.py
+
+6. Access the web app:
+    ```bash 
+        Visit http://localhost:5000 in your browser.
+
+## 🧪 Sample Use Case
+
+1. Choose a starting port and destination.
+
+2. AquaNav fetches real-time weather and simulates traffic.
+
+3. The D* Lite algorithm calculates the safest and most efficient route.
+
+4. A Folium map is generated showing the maritime path.
+
+5. Download or visualize the route map from the browser.
+
+## 📸 Screenshots
+
+ADD
+
+## 🤝 Acknowledgements
+- OpenWeatherMap
+
+- NetworkX
+
+- Folium
+
+## 👨‍💻 Authors
+Author 1 – bhambeomkar@gmail.com
+Author 2 - anuragsandbhor1111@gmail.com
+
+Department of Artificial Intelligence & Data Science, Bachelor of Engineering
