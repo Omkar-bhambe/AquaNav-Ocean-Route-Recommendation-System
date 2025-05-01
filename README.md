@@ -15,3 +15,12 @@
 ---
 
 ## 📁 Project Structure
+AquaNav/
+├── Aquanav.db
+├── db.py
+├── D_Lite_Backend_Model.py
+├── main.py
+├── remove_db.py
+├── ocean_route_map_*.html   # Multiple map files (e.g., London_to_Mumbai)
+├── .idea/                   # IDE config files (likely from PyCharm)
+├── .venv/                   # Python virtual environment
