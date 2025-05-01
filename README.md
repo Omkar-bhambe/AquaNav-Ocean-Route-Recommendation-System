@@ -31,3 +31,33 @@ AquaNav/
 
 Architecture: 
   <img src="">            
+
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python 3.10+**
+- **Flask**
+- **NetworkX**
+- **Geopy**
+- **Folium**
+- **OpenWeatherMap API**
+- **D* Lite Algorithm**
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/AquaNav.git
+   cd AquaNav
+   
+2. **Create a virtual environment (optional but recommended:**
+  ```bash 
+  python -m venv venv
+  source venv/bin/activate  # For Linux/macOS
+  venv\Scripts\activate     # For Windows
+
