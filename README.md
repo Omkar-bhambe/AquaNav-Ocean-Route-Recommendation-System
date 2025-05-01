@@ -66,7 +66,7 @@ Architecture:
        pip install -r requirements.txt
 
 4. Set up your OpenWeatherMap API Key:
-   Create a .env file and add:
+   - Create a .env file and add:
       ```bash 
           OPENWEATHER_API_KEY=your_api_key_here
 
