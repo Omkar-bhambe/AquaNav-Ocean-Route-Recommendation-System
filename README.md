@@ -58,8 +58,10 @@ Architecture:
 2. **Create a virtual environment (optional but recommended:**
     ```bash
         python -m venv venv
-    source venv/bin/activate  # For Linux/macOS
-    venv\Scripts\activate     # For Windows
+        source venv/bin/activate  # For Linux/macOS
+        venv\Scripts\activate     # For Windows
 
-3
+3. Install dependencies:
+    ```bash
+       pip install -r requirements.txt
 
