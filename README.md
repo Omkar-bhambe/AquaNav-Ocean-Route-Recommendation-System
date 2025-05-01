@@ -30,7 +30,7 @@ AquaNav/
 - README.md  
 
 Architecture: 
-  <img src="">            
+  <img src="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/System%20Architectue.png">            
 
 
 ---
@@ -92,7 +92,20 @@ Architecture:
 
 ## 📸 Screenshots
 
-ADD
+1. Home Page:
+  <img src ="">
+
+2. Registeration Page:
+  <img src="">
+
+3. Login Page:
+  <img src="">
+
+4. Start and Destination Port:
+  <img src="">
+
+5. Recommended Route (Example):
+  <img src="">
 
 
 
