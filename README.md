@@ -23,4 +23,4 @@ AquaNav:
 - remove_db.py
 - ocean_route_map_*.html   
 - .idea/                   
-├── .venv/                   # Python virtual environment
+- .venv/                   
