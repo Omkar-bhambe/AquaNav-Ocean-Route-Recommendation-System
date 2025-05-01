@@ -16,14 +16,19 @@
 
 ## 📁 Project Structure
 AquaNav:
-- Aquanav.db
-- db.py
-- D_Lite_Backend_Model.py
-- main.py
-- remove_db.py
-- ocean_route_map_*.html   
-- .idea/                   
-- .venv/     
+AquaNav/
+AquaNav/                    
+  - D_Lite_Backend_Model.py 
+  - db.py                   
+  - main.py                 
+  - remove_db.py            
+  - templates/              
+  - static/                 
+    - utils/                  
+    - *.html                  
+- maps/                       
+- requirements.txt            
+- README.md  
 
 Architecture: 
   <img src="">            
