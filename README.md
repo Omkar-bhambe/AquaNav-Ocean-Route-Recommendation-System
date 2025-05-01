@@ -96,16 +96,18 @@ Architecture:
   <img src ="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/First%20Page.jpg">
 
 2. Registeration Page:
-  <img src="">
+  <img src="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/Registeration%20AquaNav.jpg">
 
 3. Login Page:
-  <img src="">
+  <img src="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/Registeration%20AquaNav.jpg">
 
-4. Start and Destination Port:
-  <img src="">
+4. Start and Destination Port Enter Interface:
+  <img src="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/Route%20Input%20AquaNav.jpg">
 
 5. Recommended Route (Example):
-  <img src="">
+  <img src="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/Map%20AquaNav%202.jpg">
+----
+  <img src="https://github.com/Omkar-bhambe/AquaNav-Ocean-Route-Recommendation-System/blob/main/AquaNav%20Pictures/Map%20AquaNav%202.jpg">
 
 
 
