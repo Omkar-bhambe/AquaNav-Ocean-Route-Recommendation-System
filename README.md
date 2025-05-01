@@ -23,4 +23,7 @@ AquaNav:
 - remove_db.py
 - ocean_route_map_*.html   
 - .idea/                   
-- .venv/                   
+- .venv/     
+
+Architecture: 
+  <img src="">            
